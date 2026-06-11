@@ -2,7 +2,7 @@
 // All AI logic is isolated here — prompt engineering, API calls, response parsing.
 // This is the most important file to understand and tweak.
 
-const GROQ_API_URL = '/api/groq/openai/v1/chat/completions'
+const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 // The model we use — llama3 is free and very capable on Groq
 const MODEL = 'llama-3.3-70b-versatile'
@@ -51,6 +51,9 @@ ${jobDescription}
 
 Analyze the fit and return the JSON object.`
 
+console.log('using key:', apiKey)
+
+
   const response = await fetch(GROQ_API_URL, {
     method: 'POST',
     headers: {
@@ -70,6 +73,12 @@ Analyze the fit and return the JSON object.`
 
   if (!response.ok) {
     const err = await response.json().catch(() => ({}))
+    throw new Error(err?.error?.message || `API error: ${response.status}`)
+  }
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}))
+    console.log('full error:', JSON.stringify(err))  // add this line
     throw new Error(err?.error?.message || `API error: ${response.status}`)
   }
 

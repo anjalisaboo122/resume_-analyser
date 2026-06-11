@@ -1,7 +1,3 @@
-// App.jsx
-// Root component — thin orchestration layer.
-// All logic is in useAnalyzer(), all UI is in sub-components.
-
 import { useAnalyzer } from './hooks/useAnalyzer'
 import InputPanel from './components/InputPanel'
 import ResultsPanel from './components/ResultsPanel'
@@ -10,18 +6,20 @@ export default function App() {
   const {
     resume, setResume,
     jobDescription, setJobDescription,
-    apiKey, saveApiKey,
     result, loading, error,
     analyze, reset,
   } = useAnalyzer()
+
+  console.log(import.meta.env.VITE_GROQ_API_KEY)
+
 
   return (
     <div className="app">
       <header className="app-header">
         <div className="header-inner">
-          <span className="logo-mark">RA</span>
+          <span className="logo-mark">✨</span>
           <div>
-            <h1 className="app-title"> resume analyzer</h1>
+            <h1 className="app-title">resume analyzer</h1>
             <p className="app-sub">Powered by Groq · Llama 3 70B</p>
           </div>
         </div>
@@ -35,8 +33,6 @@ export default function App() {
               setResume={setResume}
               jobDescription={jobDescription}
               setJobDescription={setJobDescription}
-              apiKey={apiKey}
-              saveApiKey={saveApiKey}
               onAnalyze={analyze}
               loading={loading}
             />
