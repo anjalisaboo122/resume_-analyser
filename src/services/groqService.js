@@ -5,7 +5,8 @@
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 // The model we use — llama3 is free and very capable on Groq
-const MODEL="llama-3.3-70b-versatile"
+const MODEL = 'llama-3.3-70b-versatile'
+
 // This is the core prompt. Changing this changes everything about the output.
 // Notice how we:
 //  1. Give the model a clear persona

@@ -6,7 +6,7 @@ export default function RewriteSuggestions({ suggestions }) {
 
   return (
     <div className="rewrites-section">
-      <h2 className="rewrites-title">Bullet Point Rewrites</h2>
+      <h2 className="rewrites-title">✍️ Bullet Point Rewrites</h2>
       <p className="rewrites-subtitle">Stronger ways to phrase your experience for this role</p>
       <div className="rewrites-list">
         {suggestions.map((s, i) => (

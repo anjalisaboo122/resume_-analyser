@@ -9,7 +9,7 @@ export default function ResultsPanel({ result, onReset }) {
   return (
     <div className="results-panel">
       <div className="results-header">
-        <h2>Analysis Results</h2>
+        <h2>🎀 Your Results</h2>
         <button className="reset-btn" onClick={onReset}>← New Analysis</button>
       </div>
 

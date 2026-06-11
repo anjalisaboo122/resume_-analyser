@@ -4,25 +4,9 @@
 export default function InputPanel({ resume, setResume, jobDescription, setJobDescription, apiKey, saveApiKey, onAnalyze, loading }) {
   return (
     <div className="input-panel">
-      <div className="api-key-row">
-        <label htmlFor="apiKey">Groq API Key</label>
-        <input
-          id="apiKey"
-          type="password"
-          placeholder="gsk_..."
-          value={apiKey}
-          onChange={(e) => saveApiKey(e.target.value)}
-        />
-        <span className="hint">
-          Get yours free at{' '}
-          <a href="https://console.groq.com" target="_blank" rel="noreferrer">
-            console.groq.com
-          </a>
-        </span>
-      </div>
 
       <div className="textarea-group">
-        <label htmlFor="resume">Your Resume</label>
+        <label htmlFor="resume">📄 Your Resume</label>
         <textarea
           id="resume"
           placeholder="Paste your full resume here..."
@@ -34,7 +18,7 @@ export default function InputPanel({ resume, setResume, jobDescription, setJobDe
       </div>
 
       <div className="textarea-group">
-        <label htmlFor="jd">Job Description</label>
+        <label htmlFor="jd">💼 Job Description</label>
         <textarea
           id="jd"
           placeholder="Paste the job description here..."
@@ -56,7 +40,7 @@ export default function InputPanel({ resume, setResume, jobDescription, setJobDe
             Analyzing...
           </span>
         ) : (
-          'Analyze Fit →'
+          'check my fit!!'
         )}
       </button>
     </div>

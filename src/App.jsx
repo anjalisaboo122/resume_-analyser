@@ -21,7 +21,7 @@ export default function App() {
         <div className="header-inner">
           <span className="logo-mark">RA</span>
           <div>
-            <h1 className="app-title">Resume Analyzer</h1>
+            <h1 className="app-title"> resume analyzer</h1>
             <p className="app-sub">Powered by Groq · Llama 3 70B</p>
           </div>
         </div>
