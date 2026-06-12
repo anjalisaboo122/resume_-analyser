@@ -11,6 +11,7 @@ export default function ScoreCard({ score, verdict, summary }) {
   const getVerdictClass = (v) => {
     if (v === 'Strong Fit') return 'verdict-strong'
     if (v === 'Moderate Fit') return 'verdict-mid'
+    if (v === 'Invalid Input') return 'verdict-weak'
     return 'verdict-weak'
   }
 

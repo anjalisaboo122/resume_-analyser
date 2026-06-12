@@ -1,8 +1,8 @@
-// components/SkillsGrid.jsx
-// Displays matching skills, missing skills, gaps, and strengths in a grid
+import { useTranslation } from 'react-i18next'
 
 function TagList({ items, variant }) {
-  if (!items?.length) return <p className="empty-state">None found</p>
+  const { t } = useTranslation()
+  if (!items?.length) return <p className="empty-state">{t('none_found')}</p>
   return (
     <ul className="tag-list">
       {items.map((item, i) => (
@@ -13,25 +13,23 @@ function TagList({ items, variant }) {
 }
 
 export default function SkillsGrid({ matchingSkills, missingSkills, experienceGaps, strengths }) {
+  const { t } = useTranslation()
   return (
     <div className="skills-grid">
       <div className="skills-section">
-        <h3 className="section-title match">✅ Matching Skills</h3>
+        <h3 className="section-title match">✅ {t('matching_skills')}</h3>
         <TagList items={matchingSkills} variant="match" />
       </div>
-
       <div className="skills-section">
-        <h3 className="section-title missing">❌ Missing Skills</h3>
+        <h3 className="section-title missing">❌ {t('missing_skills')}</h3>
         <TagList items={missingSkills} variant="missing" />
       </div>
-
       <div className="skills-section">
-        <h3 className="section-title gap">⚠️ Experience Gaps</h3>
+        <h3 className="section-title gap">⚠️ {t('experience_gaps')}</h3>
         <TagList items={experienceGaps} variant="gap" />
       </div>
-
       <div className="skills-section">
-        <h3 className="section-title strength">🌟 Strengths</h3>
+        <h3 className="section-title strength">🌟 {t('strengths')}</h3>
         <TagList items={strengths} variant="strength" />
       </div>
     </div>
