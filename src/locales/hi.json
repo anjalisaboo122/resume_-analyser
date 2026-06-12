@@ -29,5 +29,19 @@
   "error_resume": "कृपया अपना रेज़्यूमे पेस्ट करें।",
   "error_jd": "कृपया नौकरी का विवरण पेस्ट करें।",
   "error_key": "कृपया अपनी API कुंजी दर्ज करें।",
-  "error_model": "कृपया Ollama मॉडल का नाम दर्ज करें।"
+  "error_model": "कृपया Ollama मॉडल का नाम दर्ज करें।", 
+  "reviews_tab": "समीक्षाएं",
+"analyzer_tab": "विश्लेषक",
+"reviews_title": "उपयोगकर्ता समीक्षाएं",
+"reviews_sub": "दूसरे क्या कह रहे हैं",
+"your_name": "आपका नाम",
+"your_name_placeholder": "अपना नाम दर्ज करें...",
+"your_review": "आपकी समीक्षा",
+"your_review_placeholder": "ऐप के साथ अपना अनुभव साझा करें...",
+"submit_review": "समीक्षा सबमिट करें",
+"submitting": "सबमिट हो रहा है...",
+"no_reviews": "अभी तक कोई समीक्षा नहीं। पहले बनें!",
+"review_error_name": "कृपया अपना नाम दर्ज करें।",
+"review_error_comment": "कृपया एक समीक्षा दर्ज करें।",
+"just_now": "अभी"
 }

@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAnalyzer } from './hooks/useAnalyzer'
 import InputPanel from './components/InputPanel'
 import ResultsPanel from './components/ResultsPanel'
+import Reviews from './components/Reviews'
 
 export default function App() {
   const { t, i18n } = useTranslation()
+  const [activeTab, setActiveTab] = useState('analyzer')
   const {
     resume, setResume,
     jobDescription, setJobDescription,
@@ -32,24 +35,42 @@ export default function App() {
             <button onClick={() => changeLanguage('te')} className={i18n.language === 'te' ? 'lang-btn active' : 'lang-btn'}>తె</button>
           </div>
         </div>
+        <div className="tab-bar">
+          <button
+            className={`tab-btn ${activeTab === 'analyzer' ? 'active' : ''}`}
+            onClick={() => setActiveTab('analyzer')}
+          >
+            🔍 {t('analyzer_tab')}
+          </button>
+          <button
+            className={`tab-btn ${activeTab === 'reviews' ? 'active' : ''}`}
+            onClick={() => setActiveTab('reviews')}
+          >
+            💬 {t('reviews_tab')}
+          </button>
+        </div>
       </header>
 
       <main className="app-main">
-        {!result ? (
-          <>
-            <InputPanel
-              resume={resume} setResume={setResume}
-              jobDescription={jobDescription} setJobDescription={setJobDescription}
-              provider={provider} saveProvider={saveProvider}
-              apiKey={apiKey} saveApiKey={saveApiKey}
-              ollamaModel={ollamaModel} saveOllamaModel={saveOllamaModel}
-              onAnalyze={analyze}
-              loading={loading}
-            />
-            {error && <div className="error-banner">⚠ {t(error, { defaultValue: error })}</div>}
-          </>
+        {activeTab === 'analyzer' ? (
+          !result ? (
+            <>
+              <InputPanel
+                resume={resume} setResume={setResume}
+                jobDescription={jobDescription} setJobDescription={setJobDescription}
+                provider={provider} saveProvider={saveProvider}
+                apiKey={apiKey} saveApiKey={saveApiKey}
+                ollamaModel={ollamaModel} saveOllamaModel={saveOllamaModel}
+                onAnalyze={analyze}
+                loading={loading}
+              />
+              {error && <div className="error-banner">⚠ {t(error, { defaultValue: error })}</div>}
+            </>
+          ) : (
+            <ResultsPanel result={result} onReset={reset} />
+          )
         ) : (
-          <ResultsPanel result={result} onReset={reset} />
+          <Reviews />
         )}
       </main>
     </div>

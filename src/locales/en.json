@@ -29,5 +29,20 @@
   "error_resume": "Please paste your resume.",
   "error_jd": "Please paste the job description.",
   "error_key": "Please enter your API key.",
-  "error_model": "Please enter an Ollama model name."
+  "error_model": "Please enter an Ollama model name.",
+  "reviews_tab": "Reviews",
+    "analyzer_tab": "Analyzer",
+    "reviews_title": "User Reviews",
+    "reviews_sub": "What others are saying",
+    "your_name": "Your Name",
+    "your_name_placeholder": "Enter your name...",
+    "your_review": "Your Review",
+    "your_review_placeholder": "Share your experience with the app...",
+    "submit_review": "Submit Review",
+    "submitting": "Submitting...",
+    "no_reviews": "No reviews yet. Be the first!",
+    "review_error_name": "Please enter your name.",
+    "review_error_comment": "Please enter a review.",
+    "just_now": "Just now"
+  
 }
